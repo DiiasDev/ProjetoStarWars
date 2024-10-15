@@ -1,0 +1,38 @@
+Anotações Vuetify 
+
+Ao criar um modal, usamos a tag dialog, passando um template em sequência com #activator={props}, para poder ativar o modal, 
+em sequência passamos o botão para abrir o modal, com uma v-bind de props, exemplo: 
+
+ <v-card-title>
+          <v-dialog width="600px">
+          <template #activator="{props}">
+          <v-btn v-bind="props" variant="tonal" size="small">Adicionar Usuário</v-btn>
+          </template>
+
+// Adicionando conteudo do modal em um card para ficar organizado 
+         <v-card>
+         <v-card-text>
+
+//Conteudo do modal 
+         Testando dialog 
+        </v-card-text>
+        </v-card>
+          </v-dialog>
+</v-card-title>
+
+outra forma de criar o modal: 
+
+<v-card-title>
+      <v-btn @click="isDialogOpen = true" variant="tonal" size="small">Adicioar usuários</v-btn>
+          <v-dialog
+          v-model="isDialogOpen"
+          width="600px"
+          >
+          
+      <v-card>
+      <v-card-text>
+         Testando dialog 
+      </v-card-text>
+      </v-card>
+      </v-dialog>
+    </v-card-title>
